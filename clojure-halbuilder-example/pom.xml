@@ -8,11 +8,11 @@
         <version>2.1.1-SNAPSHOT</version>
     </parent>
     <groupId>com.theoryinpractise.it</groupId>
-    <artifactId>clojure-hal</artifactId>
+    <artifactId>clojure-halbuilder-example</artifactId>
     <version>testing</version>
     <packaging>clojure</packaging>
 
-    <name>clojure-hal</name>
+    <name>clojure-halbuilder-example</name>
     <url>http://maven.apache.org</url>
 
     <properties>
