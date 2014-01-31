@@ -6,7 +6,9 @@ import com.theoryinpractise.halbuilder.api.RepresentationFactory;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import java.net.URISyntaxException;
 
+import static com.theoryinpractise.halbuilder.jersey.Main.mkUri;
 import static com.theoryinpractise.halbuilder.jersey.Main.representationFactory;
 
 @Path("myresource")
@@ -19,12 +21,13 @@ public class MyResource {
      */
     @GET
     @Produces({RepresentationFactory.HAL_JSON, RepresentationFactory.HAL_XML})
-    public Representation getIt() {
+    public Representation getIt() throws URISyntaxException {
 
-        Representation rep = representationFactory.newRepresentation();
+        Representation rep = representationFactory.newRepresentation(mkUri(MyResource.class));
         rep.withProperty("message", "Got it!");
 
         return rep;
     }
+
 
 }

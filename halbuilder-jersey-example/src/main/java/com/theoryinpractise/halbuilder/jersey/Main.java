@@ -6,8 +6,10 @@ import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
 
+import javax.ws.rs.core.UriBuilder;
 import java.io.IOException;
 import java.net.URI;
+import java.net.URISyntaxException;
 
 /**
  * Main class.
@@ -21,6 +23,12 @@ public class Main {
     public static final RepresentationFactory representationFactory = new StandardRepresentationFactory()
             .withFlag(RepresentationFactory.PRETTY_PRINT)
             .withLink("website", "http://gotohal.net");
+
+
+    public static URI mkUri(final Class<MyResource> resourceClass) throws URISyntaxException {
+        URI href = UriBuilder.fromResource(resourceClass).build();
+        return new URI(Main.BASE_URI).resolve(href);
+    }
 
 
     /**
