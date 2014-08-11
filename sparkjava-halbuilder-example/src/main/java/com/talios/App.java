@@ -30,10 +30,10 @@ public class App {
 
     public static void main(String[] args) {
 
-        get(repository.getInstance(RootRoute.class));
-        get(repository.getInstance(ForumListingRoute.class));
-        post(repository.getInstance(ForumCreationRoute.class));
-        get(repository.getInstance(ForumRoute.class));
+        get(RootRoute.PATH, repository.getInstance(RootRoute.class));
+        get(ForumListingRoute.PATH, repository.getInstance(ForumListingRoute.class));
+        post(ForumCreationRoute.PATH, repository.getInstance(ForumCreationRoute.class));
+        get(ForumRoute.PATH, repository.getInstance(ForumRoute.class));
 
     }
 

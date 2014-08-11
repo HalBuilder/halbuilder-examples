@@ -11,7 +11,7 @@ import spark.Request;
 import spark.Response;
 import spark.Route;
 
-public class ForumListingRoute extends Route {
+public class ForumListingRoute implements Route {
 
     public static final String PATH = "/forums";
 
@@ -23,7 +23,6 @@ public class ForumListingRoute extends Route {
 
     @Inject
     public ForumListingRoute(AuthStuff authStuff, Database database, RepresentationFactory representationFactory) {
-        super(PATH);
         this.database = database;
         this.representationFactory = representationFactory;
         canCreateForum = authStuff.makeAuthPredicate("CUSTOMER CREATE");

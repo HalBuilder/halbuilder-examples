@@ -25,7 +25,7 @@ public class Main {
             .withLink("website", "http://gotohal.net");
 
 
-    public static URI mkUri(final Class<MyResource> resourceClass) throws URISyntaxException {
+    public static URI mkUri(final Class resourceClass) throws URISyntaxException {
         URI href = UriBuilder.fromResource(resourceClass).build();
         return new URI(Main.BASE_URI).resolve(href);
     }

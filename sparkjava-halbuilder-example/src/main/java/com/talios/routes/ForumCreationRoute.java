@@ -8,7 +8,7 @@ import spark.Request;
 import spark.Response;
 import spark.Route;
 
-public class ForumCreationRoute extends Route {
+public class ForumCreationRoute implements Route {
 
     public static final String PATH = "/forums";
 
@@ -16,7 +16,6 @@ public class ForumCreationRoute extends Route {
 
     @Inject
     public ForumCreationRoute(Database database) {
-        super(PATH);
         this.database = database;
     }
 
